@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Coins-Web">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/tests"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
+        <dependent-module archiveName="Coins-Persistence.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Coins-Persistence/Coins-Persistence">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="Coins-Web"/>
+        <property name="java-output-path" value="/Coins-Web/build/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+
+	<description>Override Annotations...</description>
+	<table-generator name="tableGenerator" table="pkTableXml" pk-column-value="my_default"
+		pk-column-name="tabel" value-column-name="viimane_id" initial-value="1"
+		allocation-size="1" />
+	<table-generator name="tableGenerator_riik" table="pkTableXml" pk-column-value="riik"
+		pk-column-name="tabel" value-column-name="viimane_id" initial-value="1"
+		allocation-size="1" />
+	<table-generator name="tableGenerator_nominaal" table="pkTableXml" pk-column-value="nominaal"
+		pk-column-name="tabel" value-column-name="viimane_id" initial-value="1"
+		allocation-size="1" />
+	<table-generator name="tableGenerator_erim" table="pkTableXml" pk-column-value="erim"
+		pk-column-name="tabel" value-column-name="viimane_id" initial-value="1"
+		allocation-size="1" />
+	<table-generator name="tableGenerator_mynt" table="pkTableXml" pk-column-value="mynt"
+		pk-column-name="tabel" value-column-name="viimane_id" initial-value="1"
+		allocation-size="1" />
+	<table-generator name="tableGenerator_tehing" table="pkTableXml"
+		pk-column-name="tabel" value-column-name="viimane_id" initial-value="1" pk-column-value="tehing"
+		allocation-size="1" />
+	<table-generator name="tableGenerator_wishlist" table="pkTableXml" pk-column-value="wishlist"
+		pk-column-name="tabel" value-column-name="viimane_id" initial-value="1"
+		allocation-size="1" />
+		
+	
+	<entity class="ee.coins.entity.Coin" access="FIELD" />
+	<entity class="ee.coins.entity.Country" access="FIELD" />
+	<entity class="ee.coins.entity.Issue" access="FIELD" />
+	<entity class="ee.coins.entity.Nominal" access="FIELD" />
+	<entity class="ee.coins.entity.Transaction" access="FIELD" />
+	<entity class="ee.coins.entity.TransactionDetail" access="FIELD" />
+	<entity class="ee.coins.entity.Wishlist" access="FIELD" />
+	<entity class="ee.coins.entity.WishlistItem" access="FIELD" />
+</entity-mappings>
