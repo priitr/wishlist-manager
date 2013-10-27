@@ -3,12 +3,10 @@ package ee.coins.web.view;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
@@ -21,7 +19,9 @@ import ee.coins.components.ClientServiceLocator;
 import ee.coins.components.CoinBean;
 
 public class NavigatorUI extends UI {
-    Navigator navigator;
+
+	private static final long serialVersionUID = -1502787823608167090L;
+	Navigator navigator;
     protected static final String MAINVIEW = "main";
     private CoinBean myBean = (CoinBean)ClientServiceLocator.getInstance().lookupEjb("CoinBeanLocalBean");
 
@@ -38,12 +38,20 @@ public class NavigatorUI extends UI {
     }
     
     class MainView extends VerticalLayout implements View {
-        Panel panel;
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		Panel panel;
 
         // Menu navigation button listener
         class ButtonListener implements Button.ClickListener {
 
-            String menuitem;
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+			String menuitem;
             public ButtonListener(String menuitem) {
                 this.menuitem = menuitem;
             }
@@ -74,7 +82,12 @@ public class NavigatorUI extends UI {
 
     		Button button = new Button("Create new wishlist");
     		button.addClickListener(new Button.ClickListener() {
-    			public void buttonClick(ClickEvent event) {
+    			/**
+				 * 
+				 */
+				private static final long serialVersionUID = 1L;
+
+				public void buttonClick(ClickEvent event) {
     				myBean.addNewWishlist(name.getValue(), description.getValue());
     				vLayout.addComponent(new Label("Thank you for clicking"));
     				
@@ -90,7 +103,10 @@ public class NavigatorUI extends UI {
             // Allow going back to the start
             Button logout = new Button("Logout", 
                        new Button.ClickListener() {
-                @Override
+
+						private static final long serialVersionUID = 1L;
+
+				@Override
                 public void buttonClick(ClickEvent event) {
                     navigator.navigateTo("");
                 }
@@ -112,12 +128,20 @@ public class NavigatorUI extends UI {
     }
     
     class StartView extends VerticalLayout implements View {
-        public StartView() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public StartView() {
             setSizeFull();
 
             Button button = new Button("Go to Main View",
                     new Button.ClickListener() {
-                @Override
+
+						private static final long serialVersionUID = 7611036048079031379L;
+
+				@Override
                 public void buttonClick(ClickEvent event) {
                     navigator.navigateTo(MAINVIEW);
                 }

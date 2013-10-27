@@ -40,5 +40,11 @@
 		<!-- Compiler for custom widget sets. Should not be deployed -->
 		<dependency org="com.vaadin" name="vaadin-client-compiler"
 			rev="&vaadin.version;" conf="widgetset-compile->default" />
+			
+		<!-- For testing -->
+		<dependency org="junit" name="junit-dep" rev="4.8.2" conf="nodeploy->default"/>
+		
+		<!-- Open EJB -->
+		<dependency org="org.apache.openejb" name="tomee-common" rev="4.0.0" conf="nodeploy->default"/>
 	</dependencies>
 </ivy-module>
