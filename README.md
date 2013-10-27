@@ -1,0 +1,4 @@
+wishlist-manager
+================
+
+List manager
