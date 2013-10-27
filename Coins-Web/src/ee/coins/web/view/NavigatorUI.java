@@ -15,15 +15,15 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-import ee.coins.components.ClientServiceLocator;
-import ee.coins.components.CoinBean;
+import ee.coins.common.ClientServiceLocator;
+import ee.coins.services.CoinServices;
 
 public class NavigatorUI extends UI {
 
 	private static final long serialVersionUID = -1502787823608167090L;
 	Navigator navigator;
     protected static final String MAINVIEW = "main";
-    private CoinBean myBean = (CoinBean)ClientServiceLocator.getInstance().lookupEjb("CoinBeanLocalBean");
+    private CoinServices myBean = (CoinServices)ClientServiceLocator.getInstance().lookupEjb(CoinServices.class.getSimpleName());
 
     @Override
     protected void init(VaadinRequest request) {
@@ -88,7 +88,7 @@ public class NavigatorUI extends UI {
 				private static final long serialVersionUID = 1L;
 
 				public void buttonClick(ClickEvent event) {
-    				myBean.addNewWishlist(name.getValue(), description.getValue());
+    				//myBean.addNewWishlist(name.getValue(), description.getValue());
     				vLayout.addComponent(new Label("Thank you for clicking"));
     				
     			}

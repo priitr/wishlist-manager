@@ -1,12 +1,19 @@
 package ee.coins.entity;
 
-import javax.persistence.Embeddable;
+import java.io.Serializable;
 
-@Embeddable
-public class WishlistItemPK {
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
+public class WishlistItemPK implements Serializable {
+
+	private static final long serialVersionUID = 2330813474568928084L;
+	
 	private Long wishListId;
+	@Column(name="erim_id")
 	private Long issueId;
+	@Column(name="tehing_id")
 	private Long tehingId;
 	
 	public WishlistItemPK() {}

@@ -24,7 +24,7 @@ public class TransactionDetail implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id @Column(name="tehing_id")
-	private Long transactionDetailId;
+	private Long transactionId;
 	@Id @Column(name="mynt_id")
 	private Long coinId;
 	@Column(name="hind")
@@ -37,6 +37,25 @@ public class TransactionDetail implements Serializable {
 	@Column(name="kirjeldus")
 	private String description;
 
+	
+	public Long getTransactionId() {
+		return transactionId;
+	}
+	public void setTransactionId(Long transactionId) {
+		this.transactionId = transactionId;
+	}
+	public Long getCoinId() {
+		return coinId;
+	}
+	public void setCoinId(Long coinId) {
+		this.coinId = coinId;
+	}
+	public Long getAmount() {
+		return amount;
+	}
+	public void setAmount(Long amount) {
+		this.amount = amount;
+	}
 	public TransactionDetail() {
 		super();
 	}   

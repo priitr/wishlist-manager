@@ -1,4 +1,4 @@
-package ee.coins.components;
+package ee.coins.common;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,7 +9,12 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import org.apache.log4j.Logger;
+
 public class ClientServiceLocator {
+
+	private final Logger log = Logger.getLogger(ClientServiceLocator.class);
+
 	private Context initialContext;
 	private Map<String, Object> cache;
 	private static ClientServiceLocator ourInstance = new ClientServiceLocator();
@@ -41,6 +46,11 @@ public class ClientServiceLocator {
 	}
 
 	public Object lookupEjb(String ejbName) {
+		return lookup(ejbName + "LocalBean");
+	}
+
+	public Object lookup(String ejbName) {
+		log.info("lookupEjb " + ejbName);
 		if (this.cache.containsKey(ejbName)) {
 			return this.cache.get(ejbName);
 		} else {

@@ -11,18 +11,18 @@ public class TransactionDetailPK implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="tehing_id")
-	private Long transactionDetailId;
+	private Long transactionId;
 	@Column(name="mynt_id")
 	private Long coinId;
 	
 	public TransactionDetailPK() {}
-	public TransactionDetailPK(Long transactionDetailId, Long coinId) {
+	public TransactionDetailPK(Long transactionId, Long coinId) {
 		super();
-		this.transactionDetailId = transactionDetailId;
+		this.transactionId = transactionId;
 		this.coinId = coinId;
 	}
-	public Long getTransactionDetailId() {
-		return transactionDetailId;
+	public Long getTransactionId() {
+		return transactionId;
 	}
 	public Long getCoinId() {
 		return coinId;
@@ -34,7 +34,7 @@ public class TransactionDetailPK implements Serializable {
 		result = prime * result + ((coinId == null) ? 0 : coinId.hashCode());
 		result = prime
 				* result
-				+ ((transactionDetailId == null) ? 0 : transactionDetailId
+				+ ((transactionId == null) ? 0 : transactionId
 						.hashCode());
 		return result;
 	}
@@ -52,10 +52,10 @@ public class TransactionDetailPK implements Serializable {
 				return false;
 		} else if (!coinId.equals(other.coinId))
 			return false;
-		if (transactionDetailId == null) {
-			if (other.transactionDetailId != null)
+		if (transactionId == null) {
+			if (other.transactionId != null)
 				return false;
-		} else if (!transactionDetailId.equals(other.transactionDetailId))
+		} else if (!transactionId.equals(other.transactionId))
 			return false;
 		return true;
 	}

@@ -43,7 +43,15 @@ public class Coin implements Serializable {
 	public Coin() {
 		super();
 	} 
-	   
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	public byte[] getAversPicture() {
  		return this.aversPicture;
 	}

@@ -1,21 +1,32 @@
 package ee.coins.entity;
 
 import java.io.Serializable;
-import java.lang.Double;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.LockModeType;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Entity implementation class for Entity: Transaction
  *
  */
+@NamedQueries({ @NamedQuery(name = Transaction.SELECT_ALL_TRANSACTIONS , query = "select t from Transaction t", lockMode = LockModeType.NONE) })
 @Entity
 @Table(name="tehing")
 public class Transaction implements Serializable {
 	
+	public static final String SELECT_ALL_TRANSACTIONS = "SELECT_ALL_TRANSACTIONS";
 	private static final long serialVersionUID = 1L;
 	
 	public enum CurrencyType {
@@ -76,5 +87,11 @@ public class Transaction implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Long getAmount() {
+		return amount;
+	}
+	public void setAmount(Long amount) {
+		this.amount = amount;
 	}
 }

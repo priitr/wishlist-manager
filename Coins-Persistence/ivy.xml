@@ -33,7 +33,6 @@
 		<conf name="nodeploy" />
 	</configurations>
 	<dependencies defaultconf="default" defaultconfmapping="default->default">
-		<!-- Open EJB -->
-		<dependency org="org.apache.openejb" name="tomee-common" rev="4.0.0" conf="nodeploy->default"/>
+		<dependency org="org.apache.openjpa" name="openjpa-persistence" rev="2.2.2"/>
 	</dependencies>
 </ivy-module>
